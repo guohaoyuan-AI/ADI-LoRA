@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+<rect width="100%" height="100%" fill="white"/>
+<text x="360.0" y="28.0" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">CIFAR-100-C ADI-DoRA</text>
+<text x="78.0" y="49.0" font-family="Arial, Helvetica, sans-serif" font-size="10" text-anchor="start" font-weight="normal">Accuracy gain (pp)</text>
+<line x1="78" y1="328" x2="692" y2="328" stroke="#222" stroke-width="1.0"/>
+<line x1="78" y1="62" x2="78" y2="328" stroke="#222" stroke-width="1.0"/>
+<line x1="78" y1="328.0" x2="692" y2="328.0" stroke="#dddddd" stroke-width="0.7"/>
+<text x="69.0" y="332.0" font-family="Arial, Helvetica, sans-serif" font-size="9" text-anchor="end" font-weight="normal">0</text>
+<line x1="78" y1="239.3" x2="692" y2="239.3" stroke="#dddddd" stroke-width="0.7"/>
+<text x="69.0" y="243.3" font-family="Arial, Helvetica, sans-serif" font-size="9" text-anchor="end" font-weight="normal">2</text>
+<line x1="78" y1="150.7" x2="692" y2="150.7" stroke="#dddddd" stroke-width="0.7"/>
+<text x="69.0" y="154.7" font-family="Arial, Helvetica, sans-serif" font-size="9" text-anchor="end" font-weight="normal">4</text>
+<line x1="78" y1="62.0" x2="692" y2="62.0" stroke="#dddddd" stroke-width="0.7"/>
+<text x="69.0" y="66.0" font-family="Arial, Helvetica, sans-serif" font-size="9" text-anchor="end" font-weight="normal">6</text>
+<text x="231.5" y="356.0" font-family="Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="normal"><tspan x="231.5" dy="0">Subset</tspan><tspan x="231.5" dy="13">3 seeds, 36 cases</tspan><tspan x="231.5" dy="13">34/36 positive</tspan></text>
+<rect x="214.5" y="207.0" width="34.0" height="121.0" fill="#009E73" stroke="#222" stroke-width="0.6"/>
+<line x1="231.5" y1="114.8" x2="231.5" y2="299.2" stroke="#222" stroke-width="0.7"/>
+<line x1="226.5" y1="114.8" x2="236.5" y2="114.8" stroke="#222" stroke-width="0.7"/>
+<line x1="226.5" y1="299.2" x2="236.5" y2="299.2" stroke="#222" stroke-width="0.7"/>
+<text x="231.5" y="200.0" font-family="Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal">+2.73</text>
+<text x="538.5" y="356.0" font-family="Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="normal"><tspan x="538.5" dy="0">Full19 s=3</tspan><tspan x="538.5" dy="13">seed42, 19 cases</tspan><tspan x="538.5" dy="13">19/19 positive</tspan></text>
+<rect x="521.5" y="229.6" width="34.0" height="98.4" fill="#009E73" stroke="#222" stroke-width="0.6"/>
+<line x1="538.5" y1="126.3" x2="538.5" y2="328.0" stroke="#222" stroke-width="0.7"/>
+<line x1="533.5" y1="126.3" x2="543.5" y2="126.3" stroke="#222" stroke-width="0.7"/>
+<line x1="533.5" y1="328.0" x2="543.5" y2="328.0" stroke="#222" stroke-width="0.7"/>
+<text x="538.5" y="222.6" font-family="Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal">+2.22</text>
+<rect x="82" y="385" width="13" height="13" fill="#009E73" stroke="#222" stroke-width="0.5"/>
+<text x="101.0" y="396.0" font-family="Arial, Helvetica, sans-serif" font-size="9" text-anchor="start" font-weight="normal">Mean accuracy gain</text>
+</svg>

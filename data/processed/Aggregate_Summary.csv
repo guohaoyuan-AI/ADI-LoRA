@@ -1,0 +1,9 @@
+analysis_group,n,mean_alpha1_iid_pct,mean_selected_iid_pct,mean_alpha1_bilinear_pct,mean_selected_bilinear_pct,mean_alpha1_nearest_pct,mean_selected_nearest_pct,mean_nearest_gain_pp,std_nearest_gain_pp,mean_drop_reduction_pp,positive_seeds,total_seeds,selected_alpha_distribution,mean_alpha1_acc_pct,mean_selected_acc_pct,mean_acc_gain_pp,std_acc_gain_pp,positive_corruption_cases,total_corruption_cases,mean_loss_reduction,loss_positive_cases,corruption_used_for_alpha_selection,nearest_used_for_alpha_selection
+CIFAR-100 ADI-LoRA clean three-seed,3,92.6133,92.9,91.9633,92.3367,58.08,62.1533,4.0733,0.3873,3.7867,3,3,0.8: 3,,,,,,,,,,
+CIFAR-100 ADI-DoRA clean three-seed,3,92.5167,92.71,91.8033,92.08,45.9167,54.6133,8.6967,2.6426,8.5033,3,3,0.6: 1; 0.8: 2,,,,,,,,,,
+CIFAR-100-C ADI-DoRA subset_3seed_4corruptions_s1s3s5,36,,,,,,,,,,,,0.6: 12; 0.8: 24,64.7,67.4322,2.7322,2.0771,34,36,0.484289,35,0,0
+CIFAR-100-C ADI-DoRA full19_severity3_seed42,19,,,,,,,,,,,,0.8: 19,77.1905,79.4058,2.2153,2.3324,19,19,0.279807,19,0,0
+Tiny-ImageNet ADI-LoRA clean three-seed,3,88.5133,89.1233,88.7267,89.3967,82.2867,83.06,0.7733,0.1234,0.1633,3,3,0.8: 3,,,,,,,,,,
+Tiny-ImageNet ADI-DoRA single_seed_supplement,1,88.46,89.24,88.45,89.23,79.49,81.01,1.52,0.0,0.74,1,1,0.8: 1,,,,,,,,,,
+ImageNet-100 ADI-LoRA pilot_single_seed,1,96.2823,96.6454,96.2112,96.6769,95.3666,96.006,0.6394,0.0,0.2763,1,1,0.6: 1,,,,,,,,,,
+ImageNet-100 ADI-DoRA pilot_single_seed,1,96.1165,96.6927,96.0534,96.5585,95.343,96.0613,0.7183,0.0,0.1421,1,1,0.6: 1,,,,,,,,,,

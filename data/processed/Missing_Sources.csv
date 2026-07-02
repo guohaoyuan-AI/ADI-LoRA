@@ -1,0 +1,5 @@
+item,status,impact,suggested_file
+LoRA CIFAR-100-C full19 severity=3 seed42 raw CSV/package,missing raw source,Do not use the +1.46 pp / 19 of 19 narrative anchor as a formal table until raw CSV is supplied.,lora_cifar100c_full19_s3_seed42_no_ckpt*.tar.gz or lora_cifar100c_comparison.csv
+LoRA CIFAR-100-C subset / 3-seed raw CSV/package,missing raw source,Cannot claim LoRA corruption subset as formal 3-seed evidence from this upload.,lora_cifar100c_subset*.tar.gz / lora_cifar100c_3seed*.tar.gz
+ImageNet-100 LoRA/DoRA seed42,source present but pilot only,May be reported only as pilot; generated class-stratified symlink split is not a standard official ImageNet-100 benchmark.,standard official split manifest and class list if upgrading beyond pilot.
+Tiny-ImageNet DoRA,single seed only,Do not write as Tiny-ImageNet DoRA 3-seed conclusion.,tiny_imagenet_dora_seed43/44 same-checkpoint packages if needed.

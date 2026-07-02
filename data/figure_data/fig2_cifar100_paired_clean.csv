@@ -1,0 +1,7 @@
+dataset,method,seed,selected_alpha,alpha1_iid_acc_pct,selected_iid_acc_pct,alpha1_bilinear_acc_pct,selected_bilinear_acc_pct,alpha1_nearest_acc_pct,selected_nearest_acc_pct,nearest_gain_pp,drop_reduction_pp
+CIFAR-100,ADI-LoRA,42,0.8,92.53,92.89,91.76,92.25,60.68,64.84,4.16,3.80
+CIFAR-100,ADI-LoRA,43,0.8,92.84,93.08,92.18,92.59,56.62,60.27,3.65,3.41
+CIFAR-100,ADI-LoRA,44,0.8,92.47,92.73,91.95,92.17,56.94,61.35,4.41,4.15
+CIFAR-100,ADI-DoRA,42,0.8,92.16,92.65,91.44,91.98,44.82,52.94,8.12,7.63
+CIFAR-100,ADI-DoRA,43,0.8,92.76,92.83,92.06,92.18,48.08,54.47,6.39,6.32
+CIFAR-100,ADI-DoRA,44,0.6,92.63,92.65,91.91,92.08,44.85,56.43,11.58,11.56

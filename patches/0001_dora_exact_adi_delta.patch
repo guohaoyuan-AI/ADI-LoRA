@@ -1,0 +1,84 @@
+--- src/adi_lora/models/peft/lora_dora.py	2026-06-22 11:08:09.000000000 +0000
++++ src/adi_lora/models/peft/lora_dora.py	2026-06-25 17:42:13.801565329 +0000
+@@ -94,7 +94,13 @@
+         self.rank = int(rank)
+         self.alpha = float(alpha)
+         self.scaling = float(alpha) / float(rank)
+-        self.dropout = nn.Dropout(float(dropout)) if float(dropout) > 0 else nn.Identity()
++        # Current DoRA implementation intentionally uses exact dense-weight DoRA.
++        # Dropout in the LoRA direction update is not algebraically representable as
++        # a single dense W_eff and would break alpha-equivalence tests. Keep DoRA
++        # dropout disabled unless a separate stochastic DoRA derivation is added.
++        if float(dropout) > 0:
++            raise ValueError("DoRALinear currently requires dropout=0.0 for exact DoRA/ADI-DoRA semantics.")
++        self.dropout = nn.Identity()
+         self.eps = float(eps)
+         self.lora_A = nn.Parameter(torch.empty(self.rank, self.in_features))
+         self.lora_B = nn.Parameter(torch.zeros(self.out_features, self.rank))
+@@ -115,34 +121,46 @@
+         yield self.lora_B
+         yield self.magnitude
+ 
+-    def _interpolated_weight(self) -> torch.Tensor:
++    def _dora_weight(self) -> torch.Tensor:
++        """Return the standard trained DoRA effective weight at alpha=1.
++
++        W_DoRA = m * (W0 + DeltaW) / ||W0 + DeltaW||_row
++        """
+         base_w = self.base.weight
+         delta_w = self.scaling * (self.lora_B @ self.lora_A).to(dtype=base_w.dtype)
+-        scale = float(self.delta_scale)
+-        direction = base_w + scale * delta_w
++        direction = base_w + delta_w
+         direction_norm = direction.float().norm(dim=1, keepdim=True).clamp_min(self.eps).to(dtype=direction.dtype)
+-        mag = self.base_magnitude.to(device=direction.device, dtype=direction.dtype)
+-        mag_delta = self.magnitude.to(dtype=direction.dtype) - mag
+-        interpolated_mag = mag + scale * mag_delta
+-        return direction / direction_norm * interpolated_mag.view(-1, 1)
++        mag = self.magnitude.to(device=direction.device, dtype=direction.dtype)
++        return direction / direction_norm * mag.view(-1, 1)
++
++    def _interpolated_weight(self) -> torch.Tensor:
++        """Return exact adapter-delta interpolation for DoRA.
++
++        alpha=0: W0
++        alpha=1: W_DoRA
++        0<alpha<1: W0 + alpha * (W_DoRA - W0)
++
++        This is intentionally different from scaling only the low-rank direction
++        update before DoRA row normalization. The latter is nonlinear in alpha
++        and is not strict ADI-DoRA.
++        """
++        base_w = self.base.weight
++        scale = float(self.delta_scale)
++        if abs(scale) < 1e-12:
++            return base_w
++        trained_w = self._dora_weight()
++        if abs(scale - 1.0) < 1e-12:
++            return trained_w
++        return base_w + scale * (trained_w - base_w)
+ 
+     def forward(self, x: torch.Tensor) -> torch.Tensor:
+-        # Dropout is part of the low-rank direction update.  Because W_eff is a
+-        # dense matrix, apply dropout by constructing the delta on the input only
+-        # when dropout is non-identity.  For eval and dropout=0 this is exact and fast.
+-        if isinstance(self.dropout, nn.Identity):
+-            return F.linear(x, self._interpolated_weight(), self.base.bias)
+-        base_out = F.linear(x, self.base.weight, self.base.bias)
+-        delta = F.linear(F.linear(self.dropout(x), self.lora_A), self.lora_B)
+-        approx_direction_out = base_out + float(self.delta_scale) * self.scaling * delta
+-        # Keep training stable with dropout by using the exact DoRA weight when
+-        # dropout is disabled; with dropout enabled, this approximation preserves
+-        # stochastic regularization but is not used in current configs.
+-        return approx_direction_out
++        return F.linear(x, self._interpolated_weight(), self.base.bias)
+ 
+     @torch.no_grad()
+     def delta_weight(self) -> torch.Tensor:
+-        return self.scaling * (self.lora_B @ self.lora_A)
++        # For DoRA, the adapter delta must include both direction and magnitude
++        # effects after row normalization. This diagnostic is not used for training.
++        return self._dora_weight() - self.base.weight
+ 
+ 
+ PeftLinear = LoRALinear | DoRALinear

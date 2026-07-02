@@ -1,0 +1,3 @@
+dataset,method,base_method,evidence_tier,seeds,cases,mean_acc_gain_pp,std_acc_gain_pp,positive_acc_cases,total_acc_cases,mean_loss_reduction,positive_loss_cases,total_loss_cases,corruption_used_for_alpha_selection,placement
+CIFAR-100-C,ADI-DoRA,DoRA,subset_4corr_s1_s3_s5_3seed,"42,43,44",36,2.73,2.08,34,36,0.4843,35,36,0,main
+CIFAR-100-C,ADI-DoRA,DoRA,full19_s3_seed42,42,19,2.22,2.33,19,19,0.2798,19,19,0,supplement

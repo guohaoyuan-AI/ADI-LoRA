@@ -1,0 +1,71 @@
+project:
+  name: FR-PEFT-CIFAR100-Control
+  output_root: outputs/fr_peft_cifar100_controls
+  save_weights: true
+
+seed: 42
+deterministic: false
+
+dataset:
+  name: CIFAR100
+  root: ./data/raw
+  image_size: 224
+  train_interpolation: bicubic
+  val_interpolations: [bicubic, bilinear]
+  test_interpolations: [bicubic, bilinear, nearest]
+  val_ratio: 0.1
+  stratified_split: true
+  download: false
+  num_workers: 4
+
+backbone:
+  name: vit_base_patch16_224.augreg_in21k_ft_in1k
+  pretrained: true
+  checkpoint_path: null
+  num_classes: 100
+
+method:
+  name: lora_10ep
+  peft_type: lora
+  use_lp: false
+  use_delta_interpolation: false
+  target_modules: [attn.qkv, attn.proj]
+  target_blocks: all
+  rank: 16
+  lora_alpha: 16
+  dropout: 0.0
+
+train:
+  lp_epochs: 0
+  peft_epochs: 10
+  batch_size: 64
+  optimizer: adamw
+  lr_head: 0.001
+  lr_peft: 0.001
+  weight_decay: 0.05
+  scheduler: cosine
+  amp: false
+  grad_clip_norm: 1.0
+
+delta_interpolation:
+  enabled: false
+  alpha_candidates: [1.0]
+  selection_rule: none
+  bicubic_guard_pp: 0.5
+  heldout_interpolation: nearest
+
+metrics:
+  feature_layer: final_norm_tokens
+  spatial_size: [14, 14]
+  reference: frozen_backbone_same_interpolation
+  compute_lfer: true
+  compute_cka: true
+  compute_specdist: true
+  compute_high_specdist: true
+  freq_cutoff_ratio: 0.35
+
+logging:
+  train_log: train_log.csv
+  eval_log: eval_log.csv
+  alpha_selection_log: alpha_selection.csv
+  summary: summary.csv

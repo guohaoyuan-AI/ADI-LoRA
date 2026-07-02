@@ -1,0 +1,39 @@
+--- src/adi_lora/engine/train_one_epoch.py	2026-06-22 14:43:30.000000000 +0000
++++ src/adi_lora/engine/train_one_epoch.py	2026-06-25 17:43:08.009909792 +0000
+@@ -31,15 +31,32 @@
+         lr = float(train_cfg.get("lr_peft", train_cfg.get("lr", 1e-3)))
+ 
+     wd = float(train_cfg.get("weight_decay", 0.05))
+-    params = [p for p in model.parameters() if p.requires_grad]
+-    if not params:
++    named_params = [(n, p) for n, p in model.named_parameters() if p.requires_grad]
++    if not named_params:
+         raise RuntimeError(f"No trainable parameters for stage={stage}.")
+ 
++    # DoRA's row-wise magnitude is itself the learned norm of the effective
++    # weight. Applying AdamW decay to it can systematically shrink the whole
++    # projection norm and create a false DoRA collapse. Keep other historical
++    # behavior unchanged unless additional no-decay rules are explicitly added.
++    decay_params = [p for n, p in named_params if "magnitude" not in n]
++    no_decay_params = [p for n, p in named_params if "magnitude" in n]
++
+     opt_name = str(train_cfg.get("optimizer", "adamw")).lower()
+     if opt_name == "adamw":
+-        return torch.optim.AdamW(params, lr=lr, weight_decay=wd)
++        groups = []
++        if decay_params:
++            groups.append({"params": decay_params, "weight_decay": wd})
++        if no_decay_params:
++            groups.append({"params": no_decay_params, "weight_decay": 0.0})
++        return torch.optim.AdamW(groups, lr=lr)
+     if opt_name == "sgd":
+-        return torch.optim.SGD(params, lr=lr, momentum=0.9, weight_decay=wd)
++        groups = []
++        if decay_params:
++            groups.append({"params": decay_params, "weight_decay": wd})
++        if no_decay_params:
++            groups.append({"params": no_decay_params, "weight_decay": 0.0})
++        return torch.optim.SGD(groups, lr=lr, momentum=0.9)
+ 
+     raise ValueError(f"Unsupported optimizer={opt_name}")
+ 

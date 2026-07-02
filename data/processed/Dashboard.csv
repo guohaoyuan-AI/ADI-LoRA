@@ -1,0 +1,16 @@
+section,item,value
+Overall conclusion,ADI delta calibration evidence,"Formal main evidence supports CIFAR-100 clean LoRA/DoRA, CIFAR-100-C ADI-DoRA subset, and Tiny-ImageNet LoRA. ImageNet-100 remains pilot only."
+Main paper,CIFAR-100 clean,Use LoRA + DoRA 3-seed same-checkpoint final-only results.
+Main paper,CIFAR-100-C,Use ADI-DoRA subset 3-seed as main candidate; full19 severity=3 seed42 as detailed supplement.
+Main paper,Tiny-ImageNet LoRA,Use 3-seed LoRA. DoRA Tiny is seed42 supplement only.
+Pilot,ImageNet-100,"LoRA/DoRA seed42 only; generated symlink split, pilot only."
+Do not use,VPT/Adapter and old legacy exploratory method/legacy adapter baseline,Diagnostic/boundary only; not part of formal ADI-LoRA mainline.
+Computed aggregate,CIFAR-100 ADI-LoRA clean three-seed,mean gain=4.0733 pp; positives=3/3; alpha=0.8: 3
+Computed aggregate,CIFAR-100 ADI-DoRA clean three-seed,mean gain=8.6967 pp; positives=3/3; alpha=0.6: 1; 0.8: 2
+Computed aggregate,CIFAR-100-C ADI-DoRA subset_3seed_4corruptions_s1s3s5,mean gain=2.7322 pp; positives=34/36; alpha=0.6: 12; 0.8: 24
+Computed aggregate,CIFAR-100-C ADI-DoRA full19_severity3_seed42,mean gain=2.2153 pp; positives=19/19; alpha=0.8: 19
+Computed aggregate,Tiny-ImageNet ADI-LoRA clean three-seed,mean gain=0.7733 pp; positives=3/3; alpha=0.8: 3
+Computed aggregate,Tiny-ImageNet ADI-DoRA single_seed_supplement,mean gain=1.52 pp; positives=1/1; alpha=0.8: 1
+Computed aggregate,ImageNet-100 ADI-LoRA pilot_single_seed,mean gain=0.6394 pp; positives=1/1; alpha=0.6: 1
+Computed aggregate,ImageNet-100 ADI-DoRA pilot_single_seed,mean gain=0.7183 pp; positives=1/1; alpha=0.6: 1
+Missing,Critical missing raw source count,2

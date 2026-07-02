@@ -1,0 +1,10 @@
+table,placement,reason
+Main_CIFAR100_Clean,Main paper,"LoRA and DoRA clean interpolation have 3 seeds, same-checkpoint evaluation, final checkpoint only."
+Main_CIFAR100C subset,Main paper candidate,ADI-DoRA has 3 seeds x 4 corruptions x 3 severities with corruption not used for alpha selection.
+CIFAR100C full19 severity=3,Supplement,Detailed 19-corruption evidence is seed42 only; useful as detailed robustness table but not a 3-seed main claim.
+Main_TinyImageNet_LoRA,Main paper,Tiny-ImageNet LoRA has seed42/43/44 and positive same-checkpoint gains; Stage 4 main evidence.
+Tiny-ImageNet DoRA seed42,Supplement,Single seed only; cannot be written as Tiny DoRA 3-seed.
+ImageNet-100 LoRA/DoRA seed42,Supplement / pilot only,Generated class-stratified symlink split; not a standard official ImageNet-100 benchmark.
+Efficiency,Main or Supplement if space,Source exists; supports no extra trainable params / no additional inference module and alpha-selection overhead accounting.
+VPT / Adapter boundary diagnostic,Not use for main claims,Boundary diagnostic only; not the ADI-LoRA/ADI-DoRA formal mainline.
+LoRA CIFAR-100-C full19/subset,Missing raw source,Only narrative anchors found in the uploaded 17 files; raw CSV/package not present.

@@ -1,0 +1,4 @@
+dataset,method,base_method,seeds,selected_alpha_distribution,mean_iid,mean_bilinear,mean_nearest,mean_nearest_gain_pp,std_nearest_gain_pp,mean_drop_reduction_pp,positive_seeds,total_seeds,evidence_tier
+CIFAR-100,ADI-LoRA,LoRA,"42,43,44","0.8: 3",92.90,92.34,62.15,4.07,0.39,3.79,3,3,clean_3seed
+CIFAR-100,ADI-DoRA,DoRA,"42,43,44","0.6: 1; 0.8: 2",92.71,92.08,54.61,8.70,2.64,8.50,3,3,clean_3seed
+Tiny-ImageNet,ADI-LoRA,LoRA,"42,43,44","0.8: 3",89.12,89.40,83.06,0.77,0.12,0.16,3,3,formal_small_scale_3seed
