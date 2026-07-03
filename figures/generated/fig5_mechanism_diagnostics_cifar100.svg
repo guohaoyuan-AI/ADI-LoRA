@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1650" height="780" viewBox="0 0 1650 780">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="825.0" y="42.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#1f2933" >Fig. 5. Mechanism diagnostics on CIFAR-100 held-out Nearest</text>
+<text x="825.0" y="78.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#4b5563" >Mean +/- std over seeds 42/43/44; alpha* selected only from Bicubic/Bilinear validation.</text>
+<text x="321.7" y="111.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#1f2933" >(a) CKA to frozen backbone</text>
+<text x="321.7" y="138.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="middle" fill="#6b7280" >Higher means closer</text>
+<line x1="85.0" y1="595.0" x2="558.3" y2="595.0" stroke="#31363f" stroke-width="1.4"/>
+<line x1="85.0" y1="155.0" x2="85.0" y2="595.0" stroke="#31363f" stroke-width="1.4"/>
+<line x1="85.0" y1="569.1" x2="558.3" y2="569.1" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="80.0" y1="569.1" x2="85.0" y2="569.1" stroke="#31363f" stroke-width="1"/>
+<text x="73.0" y="575.1" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="end" fill="#374151" >0.55</text>
+<line x1="85.0" y1="439.7" x2="558.3" y2="439.7" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="80.0" y1="439.7" x2="85.0" y2="439.7" stroke="#31363f" stroke-width="1"/>
+<text x="73.0" y="445.7" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="end" fill="#374151" >0.60</text>
+<line x1="85.0" y1="310.3" x2="558.3" y2="310.3" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="80.0" y1="310.3" x2="85.0" y2="310.3" stroke="#31363f" stroke-width="1"/>
+<text x="73.0" y="316.3" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="end" fill="#374151" >0.65</text>
+<line x1="85.0" y1="180.9" x2="558.3" y2="180.9" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="80.0" y1="180.9" x2="85.0" y2="180.9" stroke="#31363f" stroke-width="1"/>
+<text x="73.0" y="186.9" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="end" fill="#374151" >0.70</text>
+<rect x="117.2" y="430.5" width="54.0" height="164.5" rx="4" fill="#7d8793"/>
+<line x1="144.2" y1="406.7" x2="144.2" y2="454.4" stroke="#111827" stroke-width="2"/>
+<line x1="131.2" y1="406.7" x2="157.2" y2="406.7" stroke="#111827" stroke-width="2"/>
+<line x1="131.2" y1="454.4" x2="157.2" y2="454.4" stroke="#111827" stroke-width="2"/>
+<text x="144.2" y="396.7" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.604</text>
+<text x="144.2" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >LoRA</text>
+<text x="144.2" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha=1.0</text>
+<rect x="235.5" y="329.6" width="54.0" height="265.4" rx="4" fill="#2f6fbb"/>
+<line x1="262.5" y1="301.5" x2="262.5" y2="357.8" stroke="#111827" stroke-width="2"/>
+<line x1="249.5" y1="301.5" x2="275.5" y2="301.5" stroke="#111827" stroke-width="2"/>
+<line x1="249.5" y1="357.8" x2="275.5" y2="357.8" stroke="#111827" stroke-width="2"/>
+<text x="262.5" y="291.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.643</text>
+<text x="262.5" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >ADI-LoRA</text>
+<text x="262.5" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha*</text>
+<rect x="353.8" y="497.8" width="54.0" height="97.2" rx="4" fill="#9a8f85"/>
+<line x1="380.8" y1="485.4" x2="380.8" y2="510.3" stroke="#111827" stroke-width="2"/>
+<line x1="367.8" y1="485.4" x2="393.8" y2="485.4" stroke="#111827" stroke-width="2"/>
+<line x1="367.8" y1="510.3" x2="393.8" y2="510.3" stroke="#111827" stroke-width="2"/>
+<text x="380.8" y="475.4" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.578</text>
+<text x="380.8" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >DoRA</text>
+<text x="380.8" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha=1.0</text>
+<rect x="472.2" y="292.2" width="54.0" height="302.8" rx="4" fill="#27927f"/>
+<line x1="499.2" y1="201.3" x2="499.2" y2="383.2" stroke="#111827" stroke-width="2"/>
+<line x1="486.2" y1="201.3" x2="512.2" y2="201.3" stroke="#111827" stroke-width="2"/>
+<line x1="486.2" y1="383.2" x2="512.2" y2="383.2" stroke="#111827" stroke-width="2"/>
+<text x="499.2" y="191.3" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.657</text>
+<text x="499.2" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >ADI-DoRA</text>
+<text x="499.2" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha*</text>
+<text x="850.0" y="111.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#1f2933" >(b) SpecDist to frozen backbone</text>
+<text x="850.0" y="138.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="middle" fill="#6b7280" >Lower means closer</text>
+<line x1="613.3" y1="595.0" x2="1086.7" y2="595.0" stroke="#31363f" stroke-width="1.4"/>
+<line x1="613.3" y1="155.0" x2="613.3" y2="595.0" stroke="#31363f" stroke-width="1.4"/>
+<line x1="613.3" y1="595.0" x2="1086.7" y2="595.0" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="608.3" y1="595.0" x2="613.3" y2="595.0" stroke="#31363f" stroke-width="1"/>
+<text x="601.3" y="601.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="end" fill="#374151" >0.90</text>
+<line x1="613.3" y1="419.0" x2="1086.7" y2="419.0" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="608.3" y1="419.0" x2="613.3" y2="419.0" stroke="#31363f" stroke-width="1"/>
+<text x="601.3" y="425.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="end" fill="#374151" >0.92</text>
+<line x1="613.3" y1="243.0" x2="1086.7" y2="243.0" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="608.3" y1="243.0" x2="613.3" y2="243.0" stroke="#31363f" stroke-width="1"/>
+<text x="601.3" y="249.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="end" fill="#374151" >0.94</text>
+<rect x="645.5" y="254.7" width="54.0" height="340.3" rx="4" fill="#7d8793"/>
+<line x1="672.5" y1="234.1" x2="672.5" y2="275.3" stroke="#111827" stroke-width="2"/>
+<line x1="659.5" y1="234.1" x2="685.5" y2="234.1" stroke="#111827" stroke-width="2"/>
+<line x1="659.5" y1="275.3" x2="685.5" y2="275.3" stroke="#111827" stroke-width="2"/>
+<text x="672.5" y="224.1" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.939</text>
+<text x="672.5" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >LoRA</text>
+<text x="672.5" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha=1.0</text>
+<rect x="763.8" y="355.4" width="54.0" height="239.6" rx="4" fill="#2f6fbb"/>
+<line x1="790.8" y1="331.0" x2="790.8" y2="379.9" stroke="#111827" stroke-width="2"/>
+<line x1="777.8" y1="331.0" x2="803.8" y2="331.0" stroke="#111827" stroke-width="2"/>
+<line x1="777.8" y1="379.9" x2="803.8" y2="379.9" stroke="#111827" stroke-width="2"/>
+<text x="790.8" y="321.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.927</text>
+<text x="790.8" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >ADI-LoRA</text>
+<text x="790.8" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha*</text>
+<rect x="882.2" y="224.1" width="54.0" height="370.9" rx="4" fill="#9a8f85"/>
+<line x1="909.2" y1="216.4" x2="909.2" y2="231.7" stroke="#111827" stroke-width="2"/>
+<line x1="896.2" y1="216.4" x2="922.2" y2="216.4" stroke="#111827" stroke-width="2"/>
+<line x1="896.2" y1="231.7" x2="922.2" y2="231.7" stroke="#111827" stroke-width="2"/>
+<text x="909.2" y="206.4" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.942</text>
+<text x="909.2" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >DoRA</text>
+<text x="909.2" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha=1.0</text>
+<rect x="1000.5" y="392.1" width="54.0" height="202.9" rx="4" fill="#27927f"/>
+<line x1="1027.5" y1="272.4" x2="1027.5" y2="511.7" stroke="#111827" stroke-width="2"/>
+<line x1="1014.5" y1="272.4" x2="1040.5" y2="272.4" stroke="#111827" stroke-width="2"/>
+<line x1="1014.5" y1="511.7" x2="1040.5" y2="511.7" stroke="#111827" stroke-width="2"/>
+<text x="1027.5" y="262.4" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.923</text>
+<text x="1027.5" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >ADI-DoRA</text>
+<text x="1027.5" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha*</text>
+<text x="1378.3" y="111.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#1f2933" >(c) HighSpecDist to frozen backbone</text>
+<text x="1378.3" y="138.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="middle" fill="#6b7280" >Lower means closer</text>
+<line x1="1141.7" y1="595.0" x2="1615.0" y2="595.0" stroke="#31363f" stroke-width="1.4"/>
+<line x1="1141.7" y1="155.0" x2="1141.7" y2="595.0" stroke="#31363f" stroke-width="1.4"/>
+<line x1="1141.7" y1="595.0" x2="1615.0" y2="595.0" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="1136.7" y1="595.0" x2="1141.7" y2="595.0" stroke="#31363f" stroke-width="1"/>
+<text x="1129.7" y="601.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="end" fill="#374151" >0.91</text>
+<line x1="1141.7" y1="399.4" x2="1615.0" y2="399.4" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="1136.7" y1="399.4" x2="1141.7" y2="399.4" stroke="#31363f" stroke-width="1"/>
+<text x="1129.7" y="405.4" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="end" fill="#374151" >0.93</text>
+<line x1="1141.7" y1="203.9" x2="1615.0" y2="203.9" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="1136.7" y1="203.9" x2="1141.7" y2="203.9" stroke="#31363f" stroke-width="1"/>
+<text x="1129.7" y="209.9" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="end" fill="#374151" >0.95</text>
+<rect x="1173.8" y="262.8" width="54.0" height="332.2" rx="4" fill="#7d8793"/>
+<line x1="1200.8" y1="239.7" x2="1200.8" y2="286.0" stroke="#111827" stroke-width="2"/>
+<line x1="1187.8" y1="239.7" x2="1213.8" y2="239.7" stroke="#111827" stroke-width="2"/>
+<line x1="1187.8" y1="286.0" x2="1213.8" y2="286.0" stroke="#111827" stroke-width="2"/>
+<text x="1200.8" y="229.7" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.944</text>
+<text x="1200.8" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >LoRA</text>
+<text x="1200.8" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha=1.0</text>
+<rect x="1292.2" y="359.1" width="54.0" height="235.9" rx="4" fill="#2f6fbb"/>
+<line x1="1319.2" y1="332.7" x2="1319.2" y2="385.5" stroke="#111827" stroke-width="2"/>
+<line x1="1306.2" y1="332.7" x2="1332.2" y2="332.7" stroke="#111827" stroke-width="2"/>
+<line x1="1306.2" y1="385.5" x2="1332.2" y2="385.5" stroke="#111827" stroke-width="2"/>
+<text x="1319.2" y="322.7" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.934</text>
+<text x="1319.2" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >ADI-LoRA</text>
+<text x="1319.2" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha*</text>
+<rect x="1410.5" y="235.2" width="54.0" height="359.8" rx="4" fill="#9a8f85"/>
+<line x1="1437.5" y1="227.2" x2="1437.5" y2="243.3" stroke="#111827" stroke-width="2"/>
+<line x1="1424.5" y1="227.2" x2="1450.5" y2="227.2" stroke="#111827" stroke-width="2"/>
+<line x1="1424.5" y1="243.3" x2="1450.5" y2="243.3" stroke="#111827" stroke-width="2"/>
+<text x="1437.5" y="217.2" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.947</text>
+<text x="1437.5" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >DoRA</text>
+<text x="1437.5" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha=1.0</text>
+<rect x="1528.8" y="393.2" width="54.0" height="201.8" rx="4" fill="#27927f"/>
+<line x1="1555.8" y1="275.3" x2="1555.8" y2="511.1" stroke="#111827" stroke-width="2"/>
+<line x1="1542.8" y1="275.3" x2="1568.8" y2="275.3" stroke="#111827" stroke-width="2"/>
+<line x1="1542.8" y1="511.1" x2="1568.8" y2="511.1" stroke="#111827" stroke-width="2"/>
+<text x="1555.8" y="265.3" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#111827" >0.931</text>
+<text x="1555.8" y="625.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#374151" >ADI-DoRA</text>
+<text x="1555.8" y="647.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#374151" >alpha*</text>
+<rect x="320.0" y="675.0" width="22" height="22" rx="3" fill="#7d8793"/>
+<text x="352.0" y="692.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#374151" >Baseline alpha=1.0</text>
+<rect x="590.0" y="675.0" width="22" height="22" rx="3" fill="#2f6fbb"/>
+<text x="622.0" y="692.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#374151" >ADI validation-selected alpha*</text>
+<rect x="860.0" y="675.0" width="22" height="22" rx="3" fill="#9a8f85"/>
+<text x="892.0" y="692.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#374151" >DoRA baseline alpha=1.0</text>
+<rect x="1130.0" y="675.0" width="22" height="22" rx="3" fill="#27927f"/>
+<text x="1162.0" y="692.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start" fill="#374151" >ADI-DoRA validation-selected alpha*</text>
+<text x="825.0" y="745.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#374151" >Diagnostic only: these metrics suggest, not prove, reduced representation and spectral drift from the pretrained visual anchor.</text>
+</svg>

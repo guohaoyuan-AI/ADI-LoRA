@@ -54,7 +54,9 @@ EVAL_LOG_FIELDS = [
 
 ALPHA_FIELDS = [
     "run_id", "method", "peft_type", "seed", "checkpoint_type", "alpha", "val_bicubic_acc", "val_bilinear_acc",
-    "val_bilinear_drop", "selection_score", "bicubic_guard_pass", "selected", "selection_rule", "nearest_used_for_selection",
+    "val_bilinear_drop", "selection_score", "bicubic_guard_pass", "selected", "selection_rule", "alpha_selection_source",
+    "nearest_used_for_selection", "nearest_used_for_alpha_selection", "corruption_used_for_alpha_selection",
+    "checkpoint_selection_rule", "nearest_used_for_checkpoint_selection",
 ]
 
 SUMMARY_FIELDS = [
@@ -167,10 +169,10 @@ def select_alpha(alpha_rows: List[dict], cfg: dict) -> tuple[float, str]:
     candidates = [r for r in alpha_rows if int(r["bicubic_guard_pass"]) == 1]
     if not candidates:
         candidates = alpha_rows
-    # Max bilinear acc, min bilinear drop, then smaller alpha for stronger retention.
+    # Max bilinear acc, min bilinear drop, then larger alpha for minimal intervention.
     candidates = sorted(
         candidates,
-        key=lambda r: (-float(r["val_bilinear_acc"]), float(r["val_bilinear_drop"]), float(r["alpha"])),
+        key=lambda r: (-float(r["val_bilinear_acc"]), float(r["val_bilinear_drop"]), -float(r["alpha"])),
     )
     return float(candidates[0]["alpha"]), rule
 
@@ -370,7 +372,12 @@ def run(cfg: dict, config_path: str, seed_override: int | None = None, max_train
                 "bicubic_guard_pass": 0,
                 "selected": 0,
                 "selection_rule": cfg.get("delta_interpolation", {}).get("selection_rule", "val_bilinear_acc_with_bicubic_guard"),
+                "alpha_selection_source": "val_bicubic_and_val_bilinear",
                 "nearest_used_for_selection": 0,
+                "nearest_used_for_alpha_selection": 0,
+                "corruption_used_for_alpha_selection": 0,
+                "checkpoint_selection_rule": "final_checkpoint_only",
+                "nearest_used_for_checkpoint_selection": 0,
             }
         )
 

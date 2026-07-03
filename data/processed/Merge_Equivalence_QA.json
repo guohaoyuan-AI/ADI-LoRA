@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "num_expected": 6,
+  "num_found": 6,
+  "all_expected_found": true,
+  "all_merge_equivalence_pass": true,
+  "max_output_error_observed": 1.1622905731201172e-05,
+  "pass_threshold": 0.0001,
+  "lora_max_output_error_observed": 1.1622905731201172e-05,
+  "dora_max_output_error_observed": 0.0,
+  "merged_peft_modules_per_run": [
+    24
+  ],
+  "extra_inference_modules": [
+    0
+  ],
+  "load_missing_keys": [
+    0
+  ],
+  "load_unexpected_keys": [
+    0
+  ],
+  "nearest_used_for_alpha_selection": [
+    0
+  ],
+  "corruption_used_for_alpha_selection": [
+    0
+  ],
+  "checkpoint_selection_rule": [
+    "final_checkpoint_only"
+  ],
+  "interpretation_boundary": "deployment equivalence evidence only; not alpha selection and not an accuracy experiment"
+}

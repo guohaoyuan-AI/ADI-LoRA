@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the accompanying manuscript."
+title: "Adapter Delta Interpolation for Robust Visual Adaptation in Vision Transformers"
+authors:
+  - family-names: "Guo"
+    given-names: "Haoyuan"
+  - family-names: "Hui"
+    given-names: "Baofeng"
+  - family-names: "Ma"
+    given-names: "Haohan"
+  - family-names: "Niu"
+    given-names: "Guohui"
+year: 2026
+repository-code: "https://github.com/guohaoyuan-AI/ADI-LoRA"
+license: "MIT"

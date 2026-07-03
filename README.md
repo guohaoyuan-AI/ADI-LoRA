@@ -22,6 +22,10 @@ The main supported claims are limited to:
 
 - CIFAR-100 clean interpolation-shift results for ADI-LoRA and ADI-DoRA.
 - CIFAR-100-C ADI-DoRA corruption results.
+- CIFAR-100 alpha-response and mechanism diagnostics, with Nearest used only
+  as held-out diagnostic evaluation.
+- Merged-checkpoint deployment-equivalence audits showing zero extra
+  inference modules.
 - Processed tables, figure data, and scripts used to generate the manuscript
   tables and figures.
 - Boundary diagnostics showing why non-weight-delta PEFT families such as
@@ -58,6 +62,15 @@ patches/              Patches documenting DoRA implementation corrections
 - `tools/eval_dora_same_checkpoint_alpha_sweep.py`  
   Same-checkpoint alpha evaluation for DoRA.
 
+- `tools/run_adi_protocol.py`  
+  End-to-end protocol runner that trains a final checkpoint, selects alpha
+  from Bicubic/Bilinear validation only, evaluates alpha=1.0 and alpha*, and
+  writes protocol audit files.
+
+- `tools/export_merged_adi_checkpoint.py`  
+  Exports an alpha-scaled dense checkpoint and writes a merge audit with
+  wrapped-versus-merged output error.
+
 - `tools/eval_dora_cifar100c_same_checkpoint.py`  
   CIFAR-100-C same-checkpoint corruption evaluation for DoRA.
 
@@ -79,6 +92,15 @@ patches/              Patches documenting DoRA implementation corrections
 
 - `data/figure_data/fig3_full_alpha_nearest_diagnostic.csv`  
   Diagnostic full-alpha Nearest curve data, when available.
+
+- `data/figure_data/fig4_alpha_response_cifar100.csv`  
+  Source data for the CIFAR-100 alpha-response curves.
+
+- `data/figure_data/fig5_mechanism_diagnostics_cifar100.csv`  
+  Source data for the CKA/SpecDist/HighSpecDist mechanism diagnostics.
+
+- `data/processed/Merge_Equivalence.csv`  
+  Six-run deployment-equivalence audit summary for merged ADI checkpoints.
 
 ## Environment
 
@@ -159,6 +181,24 @@ python tools/eval_dora_same_checkpoint_alpha_sweep.py \
 This evaluates final checkpoints only. Nearest interpolation is not used for
 alpha selection.
 
+## Reproducing Merged-checkpoint Export
+
+After a final checkpoint and selected alpha are available, export a dense
+checkpoint with:
+
+```bash
+python tools/export_merged_adi_checkpoint.py \
+  --config configs/fr_peft_cifar100_delta_lora.yaml \
+  --checkpoint outputs/fr_peft_cifar100/delta_lora_seed42_YYYYMMDD_HHMMSS/checkpoints/final_delta_lora_seed42.pth \
+  --alpha 0.8 \
+  --out /tmp/merged_lora_seed42_alpha0.8.pth
+```
+
+The script writes `merge_audit.json` with `merged=true`,
+`extra_inference_modules=0`, and `max_output_error_before_after_merge`.
+This is deployment-equivalence evidence only; it is not used for alpha
+selection and is not an accuracy experiment.
+
 ## Data Availability Statement
 
 Suggested manuscript wording after the GitHub repository is created:
@@ -166,10 +206,8 @@ Suggested manuscript wording after the GitHub repository is created:
 ```text
 The processed experimental tables, figure data, cleaned implementation code,
 and analysis scripts supporting the findings of this study are publicly
-available at: https://github.com/USER_OR_ORG/ADI-LoRA.
+available at: https://github.com/guohaoyuan-AI/ADI-LoRA.
 ```
-
-Replace the URL after creating the actual GitHub repository.
 
 ## What Is Not Included
 
